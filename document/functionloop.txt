@@ -1,0 +1,256 @@
+
+/**
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * Write a function that takes a number n and prints all numbers from 1 to n.
+ * 
+ * Sum of Numbers from 1 to N
+ * 
+ * Factorial of a Number
+ * 
+ * Sum of Array Elements
+ * Reverse a String
+ * Count Vowels in a Word
+ */
+
+# TypeScript Loops & Functions Practice Sheet
+
+---
+
+# 1. Introduction
+
+This practice sheet teaches you the basics of **loops** and **functions** in TypeScript with examples and exercises.
+
+---
+
+# 2. Loops in TypeScript
+
+## 2.1 `for` Loop
+
+```typescript
+for (let i = 1; i <= 5; i++) {
+  console.log("Count:", i);
+}
+```
+
+## 2.2 `while` Loop
+
+```typescript
+let x = 1;
+while (x <= 5) {
+  console.log("x =", x);
+  x++;
+}
+```
+
+## 2.3 `do...while` Loop
+
+```typescript
+let num = 1;
+do {
+  console.log("num =", num);
+  num++;
+} while (num <= 3);
+```
+
+## 2.4 `for...of` Loop (Array)
+
+```typescript
+const fruits = ["Apple", "Banana", "Orange"];
+for (const fruit of fruits) {
+  console.log(fruit);
+}
+```
+
+## 2.5 `for...in` Loop (Object)
+
+```typescript
+const person = { name: "Nader", age: 25, country: "Tunisia" };
+for (const key in person) {
+  console.log(`${key}: ${person[key as keyof typeof person]}`);
+}
+```
+
+---
+
+# 3. Functions in TypeScript
+
+## 3.1 Basic Function
+
+```typescript
+function sayHello(): void {
+  console.log("Hello TypeScript!");
+}
+sayHello();
+```
+
+## 3.2 Function with Parameters
+
+```typescript
+function greet(name: string): void {
+  console.log(`Hello, ${name}!`);
+}
+greet("Nader");
+```
+
+## 3.3 Function with Return Value
+
+```typescript
+function add(a: number, b: number): number {
+  return a + b;
+}
+console.log(add(5, 7));
+```
+
+## 3.4 Arrow Function
+
+```typescript
+const multiply = (x: number, y: number): number => x * y;
+console.log(multiply(4, 5));
+```
+
+---
+
+# 4. Loops + Functions Combined Example
+
+```typescript
+function printEvenNumbers(limit: number): void {
+  for (let i = 1; i <= limit; i++) {
+    if (i % 2 === 0) console.log(i);
+  }
+}
+printEvenNumbers(10);
+```
+
+---
+
+# 5. Exercises with Solutions
+
+## Exercise 1 — Print numbers from 1 to N
+
+```typescript
+function printNumbers(n: number): void {
+  for (let i = 1; i <= n; i++) {
+    console.log(i);
+  }
+}
+printNumbers(5);
+```
+
+## Exercise 2 — Sum of numbers 1 to N
+
+```typescript
+function sumNumbers(n: number): number {
+  let sum = 0;
+  for (let i = 1; i <= n; i++) sum += i;
+  return sum;
+}
+console.log(sumNumbers(5));
+```
+
+## Exercise 3 — Print Even Numbers
+
+```typescript
+function printEvenNumbers(): void {
+  for (let i = 1; i <= 20; i++) {
+    if (i % 2 === 0) console.log(i);
+  }
+}
+printEvenNumbers();
+```
+
+## Exercise 4 — Factorial of a Number
+
+```typescript
+function factorial(n: number): number {
+  let result = 1;
+  for (let i = 1; i <= n; i++) result *= i;
+  return result;
+}
+console.log(factorial(5));
+```
+
+## Exercise 5 — Sum of Array Elements
+
+```typescript
+function sumArray(arr: number[]): number {
+  let sum = 0;
+  for (const num of arr) sum += num;
+  return sum;
+}
+console.log(sumArray([5, 10, 15, 20]));
+```
+
+## Exercise 6 — Reverse a String
+
+```typescript
+function reverseString(str: string): string {
+  let reversed = "";
+  for (let i = str.length - 1; i >= 0; i--) reversed += str[i];
+  return reversed;
+}
+console.log(reverseString("TypeScript"));
+```
+
+## Exercise 7 — Count Vowels in a Word
+
+```typescript
+function countVowels(word: string): number {
+  const vowels = "aeiouAEIOU";
+  let count = 0;
+  for (const letter of word) {
+    if (vowels.includes(letter)) count++;
+  }
+  return count;
+}
+console.log(countVowels("TypeScript"));
+```
+
+## Exercise 8 — Find Maximum Number in an Array
+
+```typescript
+function findMax(arr: number[]): number {
+  let max = arr[0];
+  for (const num of arr) if (num > max) max = num;
+  return max;
+}
+console.log(findMax([3, 9, 1, 15, 7]));
+```
+
+## Exercise 9 — Check if a Number is Prime
+
+```typescript
+function isPrime(num: number): boolean {
+  if (num < 2) return false;
+  for (let i = 2; i <= Math.sqrt(num); i++) {
+    if (num % i === 0) return false;
+  }
+  return true;
+}
+console.log(isPrime(7)); // true
+console.log(isPrime(9)); // false
+```
+
+## Exercise 10 — Multiplication Table
+
+```typescript
+function multiplicationTable(n: number): void {
+  for (let i = 1; i <= 10; i++) {
+    console.log(`${n} x ${i} = ${n * i}`);
+  }
+}
+multiplicationTable(5);
+```
+
+---
+
+# 6. Summary
+
+* Loops: `for`, `while`, `do...while`, `for...of`, `for...in`
+* Functions: basic, with parameters, return values, arrow functions
+* Combined examples: loops + functions
+* 10 practical exercises with solutions to practice in TypeScript

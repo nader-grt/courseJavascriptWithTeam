@@ -1,0 +1,241 @@
+dataTypes for javascript 
+
+String	"Hello"	
+Number	42 or 3.14	
+Boolean	true or false	
+Null	null	
+Undefined	undefined	
+
+BigInt	123456789012345678901234
+object
+
+
+1. What Is Input and Output?
+
+Input → What the user gives to the program 
+
+Output → What the program shows back to the user 
+
+ 2. Output Methods in JavaScript
+
+Here are the most common ways to show output in JavaScript:
+
+ console.log() — Output to Console
+
+Used for debugging or showing results in the browser console.
+
+
+
+
+
+alert() — Output in Popup Window
+
+Shows a popup message to the user.
+
+let city = "Tunis";
+alert("You live in " + city);
+
+document.write() — Output to Web Page
+
+
+
+What are variables 
+variables are container for storing data value 
+
+fundamantal datatypes like boolean or char or string or float or douuble or void 
+let ch1 = 'a'
+let isdeveloper = true 
+const name = "nader chargui"
+let num1 = 140 ;
+let num2 = 15.234 ;
+
+derived datatypes  like arrary  function reference 
+let arr1 = {5,4,4,"ahmed" }
+
+function func1(){
+body of function instruction1 instruction2
+}
+
+userdefined datatypes like class enum 
+
+
+let person = {
+  name: "Nader",
+  age: 28,
+  height: 1.78
+};
+
+// Accessing values
+console.log(person.name);   // Nader
+console.log(person.age);    // 28
+
+// Updating values
+person.age = 29;
+console.log(person.age);
+
+
+variable
+
+let  nameof variab  && value
+
+const Direction = {
+  NORTH: "NORTH",
+  EAST: "EAST",
+  SOUTH: "SOUTH",
+  WEST: "WEST"
+};
+
+let move = Direction.NORTH;
+
+if (move === Direction.NORTH) {
+  console.log("You are going north!");
+}
+
+
+
+
+
+
+
+
+Key Concept
+
+In JavaScript:
+
+Primitive types are passed by value 
+(A copy of the value is passed)
+
+Objects and arrays are passed by reference 
+(A reference to the original object in memory is passed)
+
+Let’s break this down.
+
+🟢 2. Pass by Value (Primitive Types)
+
+When you pass a primitive type     like number, string, boolean,   to a function,
+the function gets a copy of the value.
+
+➡️ So, changing it inside the function does not affect the original variable.
+
+function changeValue(x) {
+  x = 100; // change inside the function
+  console.log("Inside function:", x);
+}
+
+let num = 50;
+changeValue(num);
+console.log("Outside function:", num);
+
+
+
+🔵 3. Pass by Reference (Objects & Arrays)
+
+Objects and arrays are not copied when passed to a function.
+Instead, their memory reference (address) is passed — so if you modify the object inside the function, it changes the original.
+
+Example 
+
+
+
+
+Basic array and for loop
+
+------------->  Using simple loop 
+const fruits = ["apple", "banana", "orange"];
+
+for (let i = 0; i < fruits.length; i++) {
+  console.log(fruits[i]);
+}
+
+------------->  Using  for  of 
+const colors = ["red", "green", "blue"];
+
+for (const color of colors) {
+  console.log("Color:", color);
+}
+
+
+------------->  Using foreach 
+const numbers = [1, 2, 3, 4, 5];
+
+numbers.forEach(num => {
+  console.log(num * 2); 
+});
+
+-----------> 
+
+
+
+
+
+
+
+
+
+--------------------->>
+
+*** INCREMENT  && DECREMENT  (++)  && (--)
+
+
+
+
+2. Number → String
+
+
+let n = 456;
+let str = String(n);
+console.log(str, typeof str); // '456' 'string'
+
+let str2 = n + ""; // shortcut
+console.log(str2, typeof str2); // '456' 'string'
+
+3. Implicit Conversion
+
+
+console.log("5" - 2); // 3  (string → number)
+console.log("5" + 2); // '52' (number → string)
+4.Array → String
+
+let arr = [1,2,3];
+console.log(String(arr)); // '1,2,3'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+HOMEWORK SWAP FUNCTION 
+
+function swapNumbers(obj) {
+  let temp = obj.A;
+  obj.A = obj.B;
+  obj.B = temp;
+}
+
+let numbers = { A: 5, B: 10 };
+console.log("Before swap:", numbers);
+
+swapNumbers(numbers);
+
+console.log("After swap:", numbers);
+
+
+
+
+
+
+
+
