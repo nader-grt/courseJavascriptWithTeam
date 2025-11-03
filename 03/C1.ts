@@ -1,15 +1,45 @@
-let nums2: number[] = [1,2,3,4,5];
-console.log(nums2.map(n => n*2)); // [2,4,6,8,10]
-console.log(nums2.filter(n => n%2===0)); // [2,4]
-console.log(nums2.reduce((a,b)=>a+b,0)); // 15
-console.log(nums2.find(n => n>3)); // 4
 
 
 
 
-let arr1 = [1,2,3];
-let arr2 = [4,5,6];
-console.log([...arr1,...arr2,400 , 500]);
+let arr : number[]  = []  ;;
+for(let i=1;i<=10;i++){
+    arr.push(i);
+}
+
+
+ interface IUser {
+    fname: string 
+    lname: string 
+  
+}
+
+    let user : IUser ;
+
+   
+
+
+
+   
+  function fillUser(user: IUser) :void{
+
+    for(let key in user){
+        console.log(`${key} : ${user[key as keyof IUser]}`);
+
+    }
+  }
+
+
+
+function printUser(user: IUser) :void{
+
+  for(let key in user){
+      console.log(`${key} : ${user[key as keyof IUser]}`);
+
+  }
+}
+
+console.log(arr);
 
 
 /**

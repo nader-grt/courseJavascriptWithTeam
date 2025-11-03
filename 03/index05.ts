@@ -1,8 +1,20 @@
 import readlineSync from "readline-sync";
 
+
+ 
+function add(a: number, b: number): number {
+  return a + b;
+}
+
+
+
+
+
 interface StInfo {
   firstName: string;
   lastName: string;
+  adress?: string;
+  city?: string;
 }
 
 // Read user info
@@ -15,7 +27,7 @@ function readInfo(): StInfo {
 
 // Get full name
 function getFullName(info: StInfo): string {
-  return `${info.firstName} ${info.lastName}`;
+  return  info.firstName + "" + info.lastName ;
 }
 
 // Print full name

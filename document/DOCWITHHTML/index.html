@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TypeScript Access Modifiers PDF</title>
+
+<!-- Prism.js for syntax highlighting -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-typescript.min.js"></script>
+
+<style>
+body {
+    font-family: 'Arial', sans-serif;
+    padding: 20px;
+    line-height: 1.5;
+    background-color: #fefefe;
+    color: #222;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+h1, h2, h3 {
+    color: #2c3e50;
+    page-break-after: avoid;
+}
+
+pre {
+    background: #2d2d2d;
+    color: #f8f8f2;
+    padding: 12px;
+    border-radius: 5px;
+    overflow-x: auto;
+    font-size: 0.9em;
+    page-break-inside: avoid;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 10px 0;
+    page-break-inside: avoid;
+}
+
+table, th, td {
+    border: 1px solid #333;
+    padding: 6px;
+}
+
+th {
+    background-color: #eee;
+}
+
+ol, ul {
+    margin: 5px 0 15px 20px;
+}
+
+#content {
+    background-color: white;
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 900px;
+}
+
+/* Page breaks for PDF */
+@media print {
+    h1, h2, h3 { page-break-after: avoid; }
+    pre, table { page-break-inside: avoid; }
+    div.page-break { page-break-after: always; }
+}
+</style>
+</head>
+<body>
+
+<button id="download">Download as PDF</button>
+
+<div id="content">
+    <h1>TypeScript Access Specifiers / Modifiers – Complete Guide</h1>
+
+    <h2>1. Introduction</h2>
+    <p>Access modifiers define the visibility of class members and control which properties/methods can be accessed from outside.</p>
+
+    <div class="page-break"></div>
+
+    <h2>2. Public</h2>
+    <pre><code class="language-typescript">
+class Person {
+    public firstName: string;
+    public lastName: string;
+
+    constructor(firstName: string, lastName: string) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
+    public fullName(): string {
+        return this.firstName + " " + this.lastName;
+    }
+}
+const person = new Person("Alice", "Johnson");
+console.log(person.firstName);
+console.log(person.fullName());
+    </code></pre>
+
+    <h2>3. Private</h2>
+    <pre><code class="language-typescript">
+class BankAccount {
+    private balance: number;
+    constructor(initialBalance: number) {
+        this.balance = initialBalance;
+    }
+    deposit(amount: number) { this.balance += amount; }
+    getBalance(): number { return this.balance; }
+}
+const account = new BankAccount(100);
+account.deposit(50);
+console.log(account.getBalance());
+    </code></pre>
+
+    <div class="page-break"></div>
+
+    <h2>4. Protected</h2>
+    <pre><code class="language-typescript">
+class Person {
+    protected name: string;
+    constructor(name: string) { this.name = name; }
+}
+class Employee extends Person {
+    private jobTitle: string;
+    constructor(name: string, jobTitle: string) { super(name); this.jobTitle = jobTitle; }
+    showJob() { console.log(`${this.name} works as ${this.jobTitle}`); }
+}
+const emp = new Employee("Bob", "Developer");
+emp.showJob();
+    </code></pre>
+
+    <h2>5. Readonly</h2>
+    <pre><code class="language-typescript">
+class Car { readonly model: string; constructor(model: string) { this.model = model; } }
+const car = new Car("Tesla Model 3");
+console.log(car.model);
+    </code></pre>
+
+    <div class="page-break"></div>
+
+    <h2>6. Static</h2>
+    <pre><code class="language-typescript">
+class Calculator {
+    static pi: number = 3.14159;
+    static circleArea(radius: number): number { return Calculator.pi * radius * radius; }
+}
+console.log(Calculator.circleArea(5));
+    </code></pre>
+
+    <h2>7. Combined Example</h2>
+    <pre><code class="language-typescript">
+class Employee {
+    public name: string;
+    private salary: number;
+    protected department: string;
+    readonly id: number;
+    static company: string = "TechCorp";
+
+    constructor(id: number, name: string, salary: number, department: string) {
+        this.id = id; this.name = name; this.salary = salary; this.department = department;
+    }
+
+    public showDetails() { console.log(`ID: ${this.id}, Name: ${this.name}, Dept: ${this.department}`); }
+    private showSalary() { console.log(`Salary: ${this.salary}`); }
+    protected changeDept(newDept: string) { this.department = newDept; }
+}
+const emp = new Employee(101, "Alice", 5000, "IT");
+console.log(emp.name);
+console.log(Employee.company);
+    </code></pre>
+
+    <h2>8. Key Takeaways</h2>
+    <table>
+        <tr>
+            <th>Modifier</th>
+            <th>Access</th>
+            <th>Use Case</th>
+        </tr>
+        <tr>
+            <td>public</td>
+            <td>Everywhere</td>
+            <td>Default, freely accessible</td>
+        </tr>
+        <tr>
+            <td>private</td>
+            <td>Inside class only</td>
+            <td>Hide sensitive data</td>
+        </tr>
+        <tr>
+            <td>protected</td>
+            <td>Class & child classes</td>
+            <td>Inheritance & controlled access</td>
+        </tr>
+        <tr>
+            <td>readonly</td>
+            <td>Cannot be modified</td>
+            <td>Immutable values / IDs</td>
+        </tr>
+        <tr>
+            <td>static</td>
+            <td>Belongs to class</td>
+            <td>Shared constants / utility methods</td>
+        </tr>
+    </table>
+
+    <h2>9. Practice Problems</h2>
+    <ol>
+        <li>Student class with private grades array and readonly studentId</li>
+        <li>Shape class with protected color, extend to Circle and Rectangle</li>
+        <li>LibraryBook class with private borrowed status and public methods borrow() and returnBook()</li>
+    </ol>
+</div>
+
+<!-- html2pdf.js library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script>
+document.getElementById("download").addEventListener("click", () => {
+    const element = document.getElementById("content");
+    html2pdf().from(element).set({
+        margin: 10,
+        filename: 'TypeScript_Access_Modifiers.pdf',
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+    }).save();
+});
+</script>
+
+</body>
+</html>

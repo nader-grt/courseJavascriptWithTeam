@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "tsx index09.ts"
+    "dev": "tsx interface.ts"
   },
   "devDependencies": {
     "@types/readline-sync": "^1.4.8",
