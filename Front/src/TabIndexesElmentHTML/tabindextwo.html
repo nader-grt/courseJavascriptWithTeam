@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tab Index</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-typescript.min.js"></script>
+
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        padding: 20px;
+        line-height: 1.5;
+        background-color: #fefefe;
+        color: #222;
+    }
+    
+    button {
+        padding: 10px 20px;
+        font-size: 16px;
+        margin-bottom: 20px;
+        cursor: pointer;
+    }
+    
+    h1, h2, h3 {
+        color: #2c3e50;
+        page-break-after: avoid;
+    }
+    
+    pre {
+        background: #2d2d2d;
+        color: #f8f8f2;
+        padding: 12px;
+        border-radius: 5px;
+        overflow-x: auto;
+        font-size: 0.9em;
+        page-break-inside: avoid;
+    }
+    
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        margin: 10px 0;
+        page-break-inside: avoid;
+    }
+    
+    table, th, td {
+        border: 1px solid #333;
+        padding: 6px;
+    }
+    
+    th {
+        background-color: #eee;
+    }
+    
+    ol, ul {
+        margin: 5px 0 15px 20px;
+    }
+    
+    #content {
+        background-color: white;
+        padding: 20px;
+        margin: 0 auto;
+        max-width: 900px;
+    }
+    
+    /* Page breaks for PDF */
+    @media print {
+        h1, h2, h3 { page-break-after: avoid; }
+        pre, table { page-break-inside: avoid; }
+        div.page-break { page-break-after: always; }
+    }
+    </style>
+</head>
+<body>
+    
+<pre>
+    <code>
+        tabIndex is an HTML attribute (and a JavaScript property) that controls the order in which elements receive focus when you press the Tab key on your keyboard.
+
+        When you press Tab, your browser moves the focus from one element to another — usually through inputs, buttons, and links.
+        By default, the browser follows the visual order (top to bottom, left to right), but tabIndex lets you customize that order.
+    </code>
+</pre>
+
+
+
+<input type="text" placeholder="First" tabindex="2">
+<input type="text" placeholder="Second" tabindex="1">
+<input type="text" placeholder="Third" tabindex="3">
+
+
+</body>
+</html>

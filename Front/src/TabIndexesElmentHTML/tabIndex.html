@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>tabIndex Demo</title>
+</head>
+<body>
+  <h2>tabIndex Example with HTML & JavaScript</h2>
+
+  <p>Press the <b>Tab</b> key to move between fields in this order:</p>
+  <ul>
+    <li>Username → Message → Email → Button</li>
+  </ul>
+
+  <!-- Set custom tab order -->
+  <input type="text" id="username" placeholder="Username" tabindex="1">
+  <input type="text" id="message" placeholder="Message" tabindex="2">
+  <input type="email" id="email" placeholder="Email" tabindex="3">
+  <button id="submitBtn" tabindex="4">Submit</button>
+
+  <hr>
+  <button onclick="changeTabOrder()">Change Tab Order (with JS)</button>
+
+  <script src="./main.js"></script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>front</title>
+</head>
+<body>
+    
+    <h2>practice with Event(on click) </h2>
+
+<input type="text" id="inputText1" placeholder="Enter some text1">
+
+<input type="text" id="inputText2" placeholder="Enter some text2"  >
+
+<button onclick="CopyValueFromInputOneToInputTwo()" > Copy  </button>
+
+    <script>
+
+    function CopyValueFromInputOneToInputTwo() {
+         console.log("button clicked");
+        let input1Value = document.getElementById("inputText1");
+
+        console.log("input1Value:", input1Value.value);
+
+        
+       
+     let input2Value  =   document.getElementById("inputText2");
+
+        input2Value.value = input1Value.value;
+
+         input1Value.value = "";
+    }
+                 
+    </script>
+</body>
+</html>

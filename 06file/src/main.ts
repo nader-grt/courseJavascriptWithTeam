@@ -1,4 +1,6 @@
 import * as fs from "fs";
+import appendmode from "./appendmode";
+import printContentFromFile from "./readfromfile";
 
 function main(): void {
   const filePath = "MyFile.txt";
@@ -15,4 +17,9 @@ function main(): void {
   }
 }
 
-main();
+//main();
+
+
+//appendmode()
+
+printContentFromFile();

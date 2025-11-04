@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>tabIndex Accessibility Example</title>
+</head>
+<body>
+  <h2>Accessible Form with Custom Tab Order</h2>
+
+  <p>Press the <b>Tab</b> key to move between fields.</p>
+
+  <!-- Read-only user ID — skip with Tab -->
+  <label>User ID (read-only):</label><br>
+  <input type="text" value="USR-12345" readonly tabindex="-1"><br><br>
+
+  <!-- Custom tab order starts here -->
+  <label for="name">Name:</label><br>
+  <input type="text" id="name" placeholder="Enter your name" tabindex="1"><br><br>
+
+  <label for="email">Email:</label><br>
+  <input type="email" id="email" placeholder="Enter your email" tabindex="2"><br><br>
+
+  <label for="comments">Comments:</label><br>
+  <textarea id="comments" placeholder="Your message..." tabindex="3"></textarea><br><br>
+
+  <button id="submitBtn" tabindex="4">Submit</button>
+
+  <script src="./main.js"></script>
+</body>
+</html>
