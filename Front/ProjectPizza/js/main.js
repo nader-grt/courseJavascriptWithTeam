@@ -143,8 +143,8 @@ listRadioSize.forEach((radio) => {
           resultSize1.style.color = "green"
           updateTotal()
         
-        // resultPriceTotal1.textContent = SizeValuePizza.priceSize
-        // resultPriceTotal1.style.color = "red"
+     
+          
     }
   });
 });
